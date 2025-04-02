@@ -1,0 +1,33 @@
+create group chefes
+create group atendentes
+create group estagiarios
+create group gerentes
+
+create user Maine password '123'
+create user Bernardo password '123'
+create user Jhoni password '123'
+create user Fernando password '123'
+
+alter group chefes add user Fernando
+alter group atendentes add user Bernardo
+alter group gerentes add user Jhoni
+alter group estagiarios add user Maine
+
+grant all privileges on database hospital to gerente
+grant select, insert, update, delete on alas, atendimento, enfermeiras to chefes
+grant select, insert, update, delete on medicos, especialidade, enfermeiras, pacientes, atendimento to atendente
+
+create unique index idxcrm on medicos(crm)
+create unique index idxcre on enfermeiras(cre)
+create unique index idxnome on planosaude(nome)
+create index idxnomepaciente on pacientes(nome)
+create index idxdatahora on atendimento(data,hora)
+
+select alas.idala, enfermeiras.nome as enfermeira_responsavel
+from alas
+join enfermeiras on alas.idala = enfermeiras.idenfermeiro
+
+select medicos.nome, especialidade.nome as especialidade_medico
+from medicos
+join especialidade on medicos.idmedico = especialidade.idespecialidade
+
