@@ -8,3 +8,4 @@
 <h4>Aula 6: <a href="https://github.com/MaineCalabrezi13/Banco-de-Dados-II/tree/main/Aula%2007.04">Exercicios</h4>
 <h4>Aula 7: <a href="">Prova</h4>
 <h4>Aula 8: <a href="https://github.com/MaineCalabrezi13/Banco-de-Dados-II/tree/main/Aula%2015.04">Processamento de transações, controle de concorrência</h4>
+<h4>Aula 9: <a href="https://github.com/MaineCalabrezi13/Banco-de-Dados-II/tree/main/Aula%2022.04">Revisão da Avaliação 1 e Procedimentos (Stored Procedures)</h4>
