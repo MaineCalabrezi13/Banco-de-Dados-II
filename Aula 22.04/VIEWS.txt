@@ -1,0 +1,33 @@
+Create table funcionarios(
+codigo integer not null,
+nome_func character(100) not null,
+data_entrada date,
+profissao character varying(100) not null,
+salario real,
+constraint funcionarios_pkey primary key (codigo)
+)
+
+create view view_funcionarios as select * from funcionarios
+select * from view_funcionarios
+
+create table registro_ponto(
+registro_ponto_id integer not null,
+hora_entrada time without time zone,
+"codFunc" integer not null,
+entrada date,
+constraint registro_ponto_pkey primary key(registro_ponto_id),
+constraint "codFuncFK" foreign key("codFunc")
+references funcionarios (codigo) match simple
+on update no action on delete no action
+)
+
+create view view_ponto as
+select f.codigo, f.nome_func, f.profissao, f.salario, rp.hora_entrada, rp.entrada
+from funcionarios f
+inner join registro_ponto rp on f.codigo = rp."codFunc"
+
+select * from view_ponto where codigo = 2
+
+create materialized view view_funcionarios_new as select * from funcionarios with no data
+refresh materialized view view_funcionarios_new
+select * from view_funcionarios_new
