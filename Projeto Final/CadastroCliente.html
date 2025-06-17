@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clientes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f8f8f8;
+    }
+    h1 {
+      color: #333;
+    }
+    .btn-salvar, .btn-deletar, .btn-editar {
+      display: inline-block;
+      padding: 10px 16px;
+      border: none;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-salvar {
+      background-color: #3498db;
+      margin-top: 10px;
+    }
+    .btn-deletar {
+      background-color: #e74c3c;
+      padding: 8px 12px;
+    }
+    .btn-editar {
+      background-color: #3498db;
+      padding: 8px 12px;
+      margin-right: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+      vertical-align: middle;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .form-container {
+      margin-top: 20px;
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    .form-container input {
+      display: block;
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 100%;
+      max-width: 400px;
+    }
+    .form-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      max-width: 850px;
+    }
+    .form-row input {
+      flex: 1 1 150px;
+      min-width: 150px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Clientes</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Data Nasc.</th>
+        <th>UF</th>
+        <th>CEP</th>
+        <th>Cidade</th>
+        <th>Bairro</th>
+        <th>Rua</th>
+        <th>Número</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <button class="btn-editar" disabled>Editar</button>
+          <button class="btn-deletar" disabled>Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="form-container" id="formulario">
+    <h2>Adicionar Cliente</h2>
+    <form>
+      <input type="number" name="id_cliente" placeholder="ID Cliente" required />
+      <input type="text" name="nome" placeholder="Nome" required />
+      <input type="text" name="telefone" placeholder="Telefone" required />
+      <input type="date" name="datanasc" placeholder="Data Nasc." required />
+      <input type="text" name="UF" placeholder="UF" maxlength="2" required />
+      <input type="text" name="cep" placeholder="CEP" required />
+      <input type="text" name="cidade" placeholder="Cidade" required />
+      <input type="text" name="bairro" placeholder="Bairro" required />
+      <input type="text" name="rua" placeholder="Rua" required />
+      <input type="text" name="numero_endereco" placeholder="Número" required />
+      <button type="submit" class="btn-salvar">Salvar</button>
+    </form>
+  </div>
+
+</body>
+</html>
